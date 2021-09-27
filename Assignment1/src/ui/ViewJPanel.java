@@ -336,6 +336,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     private void displayPerson() {
         txtName.setText(person.getName());
         txtBirth.setText(person.getDateOfBirth());
+//        get person's age according to the  Date of Birth
         if(person.getDateOfBirth() != null){
             int birthYear = Integer.parseInt(person.getDateOfBirth().substring(0, 4));
             Calendar cal = Calendar.getInstance();
@@ -357,7 +358,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         txtVin.setText(person.getVin());
         txtUdi.setText(person.getUid());
         txtLicensePlate.setText(person.getLicensePlate());
-        
+//        show the picture        
         ImageIcon imageIcon = new ImageIcon("src\\image\\Personal Picture.png");
         lblPic.setIcon(imageIcon);
         lblPic.getIcon();

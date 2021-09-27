@@ -24,6 +24,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     public CreateJPanel(Person person) {
         initComponents();
         this.person = person;
+//    delete the previous picture submitted  
         deleteOldPic("src\\image\\");
     }
 
@@ -418,17 +419,14 @@ public class CreateJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(new JDialog(),"Please choose correct picture");
                 return;
             }
+//          copy the photo into the src\image\
             FileInputStream fis = null;
             FileOutputStream fos = null;
             String path = "src\\image\\";
             try {
-                //
                 File destFile = new File(path,"Personal Picture.png");
-                //
                 fis = new FileInputStream(addedFile);
                 fos = new FileOutputStream(destFile);
-
-                //复制的过程
                 byte[] buffer = new byte[5];
                 int len;
                 while((len = fis.read(buffer)) != -1){
